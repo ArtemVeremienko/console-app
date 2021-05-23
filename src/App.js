@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import './App.css'
+import Title from './components/Title'
+import Flex from './components/Flex'
+import Console from './components/Console'
+import Button from './components/Button'
+
+const AppWrapper = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #000;
+`
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <AppWrapper>
+            <Flex justify='center'>
+                <Title>Console Emulator v1.0</Title>
+            </Flex>
+            <Flex direction='column' margin='10px 0'>
+                <Console/>
+                <Button align='flex-end' outlined>Send</Button>
+            </Flex>
+        </AppWrapper>
+    )
 }
 
-export default App;
+export default App
